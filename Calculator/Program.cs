@@ -8,45 +8,45 @@ namespace Calculator
         //private int RunAddition()
         private static void RunAddition()
         {
-            int number1;
-            int number2;
+            double number1;
+            double number2;
             Console.Write("Ange ett nummer: ");
-            number1 = int.Parse(Console.ReadLine());
+            number1 = double.Parse(Console.ReadLine());
             Console.Write("Ange ett nummer: ");
-            number2 = int.Parse(Console.ReadLine());
+            number2 = double.Parse(Console.ReadLine());
             Console.Write("Resultat: " + number1 * number2);
         }
 
         private static void RunSubtraction()
         {
-            int number1;
-            int number2;
+            double number1;
+            double number2;
             Console.Write("Ange ett nummer: ");
-            number1 = int.Parse(Console.ReadLine());
+            number1 = double.Parse(Console.ReadLine());
             Console.Write("Ange ett nummer: ");
-            number2 = int.Parse(Console.ReadLine());
+            number2 = double.Parse(Console.ReadLine());
             Console.Write("Resultat: " + number1 * number2);
         }
 
         private static void RunMultiplication()
         {
-            int number1;
-            int number2;
+            double number1;
+            double number2;
             Console.Write("Ange ett nummer: ");
-            number1 = int.Parse(Console.ReadLine());
+            number1 = double.Parse(Console.ReadLine());
             Console.Write("Ange ett nummer: ");
-            number2 = int.Parse(Console.ReadLine());
+            number2 = double.Parse(Console.ReadLine());
             Console.Write("Resultat: " + number1 * number2);
         }
 
         private static void RunDivision()
         {
-            int number1;
-            int number2;
+            double number1;
+            double number2;
             Console.Write("Ange ett nummer: ");
-            number1 = int.Parse(Console.ReadLine());
+            number1 = double.Parse(Console.ReadLine());
             Console.Write("Ange ett nummer: ");
-            number2 = int.Parse(Console.ReadLine());
+            number2 = double.Parse(Console.ReadLine());
 
 
                 if (number1 == 0)
