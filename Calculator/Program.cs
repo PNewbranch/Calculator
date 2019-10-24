@@ -5,40 +5,57 @@ namespace Calculator
     class Program
     {
 
-        public static void RunAddition()
+        //private int RunAddition()
+        private static void RunAddition()
         {
-            Console.WriteLine("+");
+            int number1;
+            int number2;
+            Console.WriteLine("Ange ett nummer: ");
+            number1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ange ett nummer: ");
+            number2 = int.Parse(Console.ReadLine());
+            Console.WriteLine(number1 + number2);
         }
 
         private static void RunSubtraction()
         {
-            Console.WriteLine("-");
+            int number1;
+            int number2;
+            Console.WriteLine("Ange ett nummer: ");
+            number1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ange ett nummer: ");
+            number2 = int.Parse(Console.ReadLine());
+            Console.WriteLine(number1 - number2);
         }
 
         private static void RunMultiplication()
         {
-            Console.WriteLine("*");
+            int number1;
+            int number2;
+            Console.WriteLine("Ange ett nummer: ");
+            number1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ange ett nummer: ");
+            number2 = int.Parse(Console.ReadLine());
+            Console.WriteLine(number1 * number2);
         }
 
         private static void RunDivision()
         {
-            Console.WriteLine("/");
+            int number1;
+            int number2;
+            Console.WriteLine("Ange ett nummer: ");
+            number1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ange ett nummer: ");
+            number2 = int.Parse(Console.ReadLine());
+            Console.WriteLine(number1 / number2);
         }
 
 
-        private static void askUserForNumbers()
-        {
-            //int usersFirstNumber;
-            //int usersLastNumber;
-
-            //Console.WriteLine("Ange ditt första numer: ");
-            //usersFirstNumber = int.Parse(Console.ReadLine());
-            //Console.WriteLine("Ange ditt andra numer: ");
-            //usersLastNumber = int.Parse(Console.ReadLine());
-
-            //Console.WriteLine(usersFirstNumber + " " + usersLastNumber);
-
-        }
+        //static int AskUserForANumber()
+        //{
+        //    Console.WriteLine("Ange ett nummer: ");
+        //    return int.Parse(Console.ReadLine());
+        //}
 
 
 
