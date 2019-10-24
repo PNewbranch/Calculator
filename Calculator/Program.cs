@@ -10,52 +10,49 @@ namespace Calculator
         {
             double number1;
             double number2;
-            Console.Write("Ange ett nummer: ");
+            Console.Write("Ange ditt första nummer: ");
             number1 = double.Parse(Console.ReadLine());
-            Console.Write("Ange ett nummer: ");
+            Console.Write("Ange ditt andra nummer: ");
             number2 = double.Parse(Console.ReadLine());
-            Console.Write("Resultat: " + number1 * number2);
+            Console.WriteLine("Resultat: " + (number1 + number2));
         }
 
         private static void RunSubtraction()
         {
             double number1;
             double number2;
-            Console.Write("Ange ett nummer: ");
+            Console.Write("Ange ditt första nummer: ");
             number1 = double.Parse(Console.ReadLine());
-            Console.Write("Ange ett nummer: ");
+            Console.Write("Ange ditt andra nummer: ");
             number2 = double.Parse(Console.ReadLine());
-            Console.Write("Resultat: " + number1 * number2);
+            Console.WriteLine("Resultat: " + (number1 - number2));
         }
 
         private static void RunMultiplication()
         {
             double number1;
             double number2;
-            Console.Write("Ange ett nummer: ");
+            Console.Write("Ange ditt första nummer: ");
             number1 = double.Parse(Console.ReadLine());
-            Console.Write("Ange ett nummer: ");
+            Console.Write("Ange ditt andra nummer: ");
             number2 = double.Parse(Console.ReadLine());
-            Console.Write("Resultat: " + number1 * number2);
+            Console.WriteLine("Resultat: " + (number1 * number2));
         }
 
         private static void RunDivision()
         {
             double number1;
             double number2;
-            Console.Write("Ange ett nummer: ");
+            Console.Write("Ange ditt första nummer: ");
             number1 = double.Parse(Console.ReadLine());
-            Console.Write("Ange ett nummer: ");
+            Console.Write("Ange ditt andra nummer: ");
             number2 = double.Parse(Console.ReadLine());
 
-
-                if (number1 == 0)
-                    Console.WriteLine("Värdet 0 får ej användas vid division.");
-                else 
-                    Console.WriteLine("Resultat: " + (number1 / number2));
-
+            if (number1 == 0)
+                Console.WriteLine("Värdet 0 får ej användas vid division.");
+            else 
+                Console.WriteLine("Resultat: " + (number1 / number2));
         }
-
 
         //static int AskUserForANumber()
         //{
@@ -94,6 +91,7 @@ namespace Calculator
                     case 2:
                         RunSubtraction();
                         break;
+
                     case 3:
                         RunMultiplication();
                         break;
@@ -101,6 +99,14 @@ namespace Calculator
                         RunDivision();
                         break;
                 }
+
+                if (usersLoopChoise != 9)
+                {
+                    Console.WriteLine("Tryck någon tangent för att fortsätta.");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+
             } while (usersLoopChoise != 9);
 
 
