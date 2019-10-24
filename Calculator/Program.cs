@@ -5,7 +5,7 @@ namespace Calculator
     class Program
     {
 
-        private static void RunAddition()
+        public static void RunAddition()
         {
             Console.WriteLine("+");
         }
@@ -26,17 +26,25 @@ namespace Calculator
         }
 
 
+        private static void askUserForNumbers()
+        {
+            //int usersFirstNumber;
+            //int usersLastNumber;
+
+            //Console.WriteLine("Ange ditt första numer: ");
+            //usersFirstNumber = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Ange ditt andra numer: ");
+            //usersLastNumber = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine(usersFirstNumber + " " + usersLastNumber);
+
+        }
 
 
 
         static void Main(string[] args)
         {
             int usersLoopChoise; //for the loop
-            int usersFirstNumber;
-            int usersLastNumber;
-
-
-
 
             do
             {
@@ -50,7 +58,6 @@ namespace Calculator
                 Console.WriteLine();
                 Console.WriteLine("9 för att avsluta programmet.");
 
-                               
                 //usersChoise = int.Parse(Console.ReadKey().ToString());
                 usersLoopChoise = int.Parse(Console.ReadLine());
                 switch (usersLoopChoise)
@@ -73,8 +80,6 @@ namespace Calculator
             } while (usersLoopChoise != 9);
 
 
-           
-      
         }
     }
 }
