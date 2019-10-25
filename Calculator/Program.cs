@@ -5,7 +5,18 @@ namespace Calculator
     class Program
     {
 
-        //private int RunAddition()
+        private static void ShowMenu()
+        {
+            Console.WriteLine();
+            Console.WriteLine("\tAnge:");
+            Console.WriteLine("\t1 för att addera");
+            Console.WriteLine("\t2 för att subtrahera");
+            Console.WriteLine("\t3 för att multiplicera");
+            Console.WriteLine("\t4 för att dividera \n");
+            Console.WriteLine("\t9 för att avsluta programmet. \n");
+            Console.Write("Ange ditt val: ");
+        }
+    
         private static void RunAddition()
         {
             double number1;
@@ -72,14 +83,8 @@ namespace Calculator
 
                 do
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("\tAnge:");
-                    Console.WriteLine("\t1 för att addera");
-                    Console.WriteLine("\t2 för att subtrahera");
-                    Console.WriteLine("\t3 för att multiplicera");
-                    Console.WriteLine("\t4 för att dividera \n");
-                    Console.WriteLine("\t9 för att avsluta programmet. \n");
-                    Console.Write("Ange ditt val: ");
+
+                    ShowMenu();
 
                     try
                     {
@@ -104,17 +109,17 @@ namespace Calculator
                                 RunDivision();
                                 break;
                         }
-
                         if (usersLoopChoise != 9)
                         {
                             Console.WriteLine("Tryck någon tangent för att fortsätta.");
                             Console.ReadKey();
                             Console.Clear();
-                    }
+                        }
                     }
                     catch (Exception)
                     {
                         Console.WriteLine("Felakttigt värde inmatat, vänligen försök igen.");
+                        Console.Clear();
                     }
 
                 } while (uppRunning);
@@ -122,9 +127,8 @@ namespace Calculator
             }
             catch (Exception)
             {
-                Console.WriteLine("Något fel uppstod, vänligen försök igen.");
-                //throw;
-
+                Console.WriteLine("Något odefinierat fel uppstod, vänligen försök igen.");
+                Console.Clear();
             }
         }
     }
