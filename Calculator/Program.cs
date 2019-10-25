@@ -66,50 +66,56 @@ namespace Calculator
         {
             int usersLoopChoise; //for the loop
 
-            do
+            try
             {
-                Console.WriteLine();
-                Console.WriteLine("Ange");
-                Console.WriteLine("1 för att addera");
-                Console.WriteLine("2 för att subtrahera");
-                Console.WriteLine("3 för att multiplicera");
-                Console.WriteLine("4 för att dividera");
-                Console.WriteLine();
-                Console.WriteLine("9 för att avsluta programmet.");
-                Console.WriteLine();
-                Console.Write("Ange ditt val: ");
-
-                //usersChoise = int.Parse(Console.ReadKey().ToString());
-                usersLoopChoise = int.Parse(Console.ReadLine());
-                switch (usersLoopChoise)
+                do
                 {
-                    case 9:
-                        break;
-                    case 1:
-                        RunAddition();
-                        break;
-                    case 2:
-                        RunSubtraction();
-                        break;
-
-                    case 3:
-                        RunMultiplication();
-                        break;
-                    case 4:
-                        RunDivision();
-                        break;
-                }
-
-                if (usersLoopChoise != 9)
-                {
-                    Console.WriteLine("Tryck någon tangent för att fortsätta.");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-
-            } while (usersLoopChoise != 9);
+                    Console.WriteLine();
+                    Console.WriteLine("\tAnge:");
+                    Console.WriteLine("\t1 för att addera");
+                    Console.WriteLine("\t2 för att subtrahera");
+                    Console.WriteLine("\t3 för att multiplicera");
+                    Console.WriteLine("\t4 för att dividera+ \n");
+                    Console.WriteLine("\t9 för att avsluta programmet. \n");
+                    Console.Write("Ange ditt val: ");
 
 
+                    //usersChoise = int.Parse(Console.ReadKey().ToString());
+                    usersLoopChoise = int.Parse(Console.ReadLine());
+                    switch (usersLoopChoise)
+                    {
+                        case 9:
+                            break;
+                        case 1:
+                            RunAddition();
+                            break;
+                        case 2:
+                            RunSubtraction();
+                            break;
+
+                        case 3:
+                            RunMultiplication();
+                            break;
+                        case 4:
+                            RunDivision();
+                            break;
+                    }
+
+                    if (usersLoopChoise != 9)
+                    {
+                        Console.WriteLine("Tryck någon tangent för att fortsätta.");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+
+                } while (usersLoopChoise != 9);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Fel värde matades in, vänligen försök igen.");
+                //throw;
+
+            }
         }
     }
 }
