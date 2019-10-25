@@ -12,8 +12,8 @@ namespace Calculator
             Console.WriteLine("\t1 för att addera");
             Console.WriteLine("\t2 för att subtrahera");
             Console.WriteLine("\t3 för att multiplicera");
-            Console.WriteLine("\t4 för att dividera \n");
-            Console.WriteLine("\t9 för att avsluta programmet. \n");
+            Console.WriteLine("\t4 för att dividera\n");
+            Console.WriteLine("\t9 för att avsluta programmet\n");
             Console.Write("Ange ditt val: ");
         }
     
@@ -25,18 +25,20 @@ namespace Calculator
             number1 = double.Parse(Console.ReadLine());
             Console.Write("Ange ditt andra nummer: ");
             number2 = double.Parse(Console.ReadLine());
-            Console.WriteLine("Resultat: " + (number1 + number2));
+            Console.WriteLine("Resultatet blir: " + (number1 + number2));
+            Console.WriteLine();
         }
 
         private static void RunSubtraction()
         {
             double number1;
             double number2;
-            Console.Write("Ange ditt första nummer: ");
+            Console.Write("Ditt första nummer: ");
             number1 = double.Parse(Console.ReadLine());
-            Console.Write("Ange ditt andra nummer: ");
+            Console.Write("Ditt andra nummer: ");
             number2 = double.Parse(Console.ReadLine());
-            Console.WriteLine("Resultat: " + (number1 - number2));
+            Console.WriteLine("Resultatet blir: " + (number1 - number2));
+            Console.WriteLine();
         }
 
         private static void RunMultiplication()
@@ -47,7 +49,8 @@ namespace Calculator
             number1 = double.Parse(Console.ReadLine());
             Console.Write("Ange ditt andra nummer: ");
             number2 = double.Parse(Console.ReadLine());
-            Console.WriteLine("Resultat: " + (number1 * number2));
+            Console.WriteLine("Resultatet blir: " + (number1 * number2));
+            Console.WriteLine();
         }
 
         private static void RunDivision()
@@ -63,6 +66,7 @@ namespace Calculator
                 Console.WriteLine("Värdet 0 får ej användas vid division.");
             else 
                 Console.WriteLine("Resultat: " + (number1 / number2));
+            Console.WriteLine();
         }
 
         //static int AskUserForANumber()
@@ -83,7 +87,7 @@ namespace Calculator
 
                 do
                 {
-
+                    //Console.Clear();
                     ShowMenu();
 
                     try
@@ -93,6 +97,7 @@ namespace Calculator
                         switch (usersLoopChoise)
                         {
                             case 9:
+                                //Console.WriteLine("Du har valt att avsluta!");
                                 uppRunning = false;
                                 break;
                             case 1:
@@ -118,8 +123,9 @@ namespace Calculator
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("Felakttigt värde inmatat, vänligen försök igen.");
                         Console.Clear();
+                        Console.WriteLine("\nFelakttigt värde inmatat, vi försöker igen!");
+                        Console.WriteLine("Ange heltal vid val av räknesätt och heltal/decimaltal (kommaavskiljare) vid beräkning.");
                     }
 
                 } while (uppRunning);
@@ -127,8 +133,8 @@ namespace Calculator
             }
             catch (Exception)
             {
-                Console.WriteLine("Något odefinierat fel uppstod, vänligen försök igen.");
                 Console.Clear();
+                Console.WriteLine("\n\nNågot odefinierat fel uppstod, vänligen försök igen!!!\n\n");
             }
         }
     }
