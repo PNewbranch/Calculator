@@ -4,7 +4,6 @@ namespace Calculator
 {
     class Program
     {
-
         private static void ShowMenu()
         {
             Console.WriteLine();
@@ -16,81 +15,61 @@ namespace Calculator
             Console.WriteLine("\t9 för att avsluta programmet\n");
             Console.Write("Ange ditt val: ");
         }
-    
-        private static void RunAddition()
+
+        private static double AskForInput() //(outparametern) RETURN-värdet skrivs FÖRE metodnamnet - return= DOUBLE
         {
-            double number1;
-            double number2;
-            Console.Write("Ange ditt första nummer: ");
-            number1 = double.Parse(Console.ReadLine());
-            Console.Write("Ange ditt andra nummer: ");
-            number2 = double.Parse(Console.ReadLine());
-            Console.WriteLine("Resultatet blir: " + (number1 + number2));
-            Console.WriteLine();
+            Console.Write("Ange ett nummer: ");
+            return double.Parse(Console.ReadLine()); //skickar det inlästa värdet som "return"
         }
 
-        private static void RunSubtraction()
+        private static void WaitForValueToContinue()
         {
-            double number1;
-            double number2;
-            Console.Write("Ditt första nummer: ");
-            number1 = double.Parse(Console.ReadLine());
-            Console.Write("Ditt andra nummer: ");
-            number2 = double.Parse(Console.ReadLine());
-            Console.WriteLine("Resultatet blir: " + (number1 - number2));
-            Console.WriteLine();
+            Console.WriteLine("Tryck någon tangent för att fortsätta.");
+            Console.ReadKey();
+            Console.Clear();
         }
 
-        private static void RunMultiplication()
+        private static void RunAddition(double num1, double num2) //förväntade inparametrar skrivs i parentes - input typ DOUBLE var num1
         {
-            double number1;
-            double number2;
-            Console.Write("Ange ditt första nummer: ");
-            number1 = double.Parse(Console.ReadLine());
-            Console.Write("Ange ditt andra nummer: ");
-            number2 = double.Parse(Console.ReadLine());
-            Console.WriteLine("Resultatet blir: " + (number1 * number2));
-            Console.WriteLine();
+            Console.WriteLine(num1 + num2);
         }
 
-        private static void RunDivision()
+        private static void RunSubtraction(double num1, double num2) 
         {
-            double number1;
-            double number2;
-            Console.Write("Ange ditt första nummer: ");
-            number1 = double.Parse(Console.ReadLine());
-            Console.Write("Ange ditt andra nummer: ");
-            number2 = double.Parse(Console.ReadLine());
-
-            if (number1 == 0)
-                Console.WriteLine("Värdet 0 får ej användas vid division.");
-            else 
-                Console.WriteLine("Resultat: " + (number1 / number2));
-            Console.WriteLine();
+            Console.WriteLine(num1 - num2);
         }
 
-        //static int AskUserForANumber()
-        //{
-        //    Console.WriteLine("Ange ett nummer: ");
-        //    return int.Parse(Console.ReadLine());
-        //}
+        private static void RunMultiplication(double num1, double num2)
+        {
+            Console.WriteLine(num1 * num2);
+        }
 
+        private static void RunDivision(double num1, double num2) 
+        {
+            if ((num1 == 0) || (num2 == 0))
+            {
+                Console.WriteLine("Det är ej tillåtet att användar nollor vid division!");
+            }
+            else
+            {
+                Console.WriteLine(num1 / num2);
+            }
 
-
+        }
+        
         static void Main(string[] args)
         {
-            int usersLoopChoise; //for the loop
-            bool uppRunning = true;
-            
+
+            bool uppRunning = true; //loopar så länge denna är sann
+            int usersLoopChoise; //användarens val
+           
             try
             {
-
-                do
+                do  //min do-sats
                 {
-                    //Console.Clear();
                     ShowMenu();
 
-                    try
+                    try //min try som fågnar upp fel tecken
                     {
                         //usersChoise = int.Parse(Console.ReadKey().ToString());
                         usersLoopChoise = int.Parse(Console.ReadLine());
@@ -101,41 +80,41 @@ namespace Calculator
                                 uppRunning = false;
                                 break;
                             case 1:
-                                RunAddition();
+                                RunAddition(AskForInput(), AskForInput());
                                 break;
                             case 2:
-                                RunSubtraction();
+                                RunSubtraction(AskForInput(), AskForInput());
                                 break;
 
                             case 3:
-                                RunMultiplication();
+                                RunMultiplication(AskForInput(), AskForInput());
                                 break;
                             case 4:
-                                RunDivision();
+                                RunDivision(AskForInput(), AskForInput());
                                 break;
                         }
                         if (usersLoopChoise != 9)
                         {
-                            Console.WriteLine("Tryck någon tangent för att fortsätta.");
-                            Console.ReadKey();
-                            Console.Clear();
+                            WaitForValueToContinue();
                         }
                     }
+
                     catch (Exception)
                     {
-                        Console.Clear();
-                        Console.WriteLine("\nFelakttigt värde inmatat, vi försöker igen!");
+                        Console.WriteLine("\nFelaktigt värde inmatat, vi försöker igen!");
                         Console.WriteLine("Ange heltal vid val av räknesätt och heltal/decimaltal (kommaavskiljare) vid beräkning.");
+                        WaitForValueToContinue();
                     }
 
-                } while (uppRunning);
+                } while (uppRunning); //loop
             
             }
             catch (Exception)
             {
-                Console.Clear();
                 Console.WriteLine("\n\nNågot odefinierat fel uppstod, vänligen försök igen!!!\n\n");
-            }
-        }
-    }
+                WaitForValueToContinue();
+            } //try-carch
+
+        } //main
+    } //class program
 }
