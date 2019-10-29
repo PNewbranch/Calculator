@@ -14,6 +14,7 @@ namespace Calculator
             Console.WriteLine("\t4 för att dividera\n");
             Console.WriteLine("\t9 för att avsluta programmet\n");
             Console.Write("Ange ditt val: ");
+
         }
 
         private static double AskForInput() //(outparametern) RETURN-värdet skrivs FÖRE metodnamnet - return= DOUBLE
